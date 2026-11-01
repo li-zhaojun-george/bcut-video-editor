@@ -12,9 +12,12 @@ Python 生成和注册脚本在本地读写，不实现媒体上传或账号登�
 
 ```powershell
 python -X utf8 scripts/check_distribution.py
+python -X utf8 scripts/check_distribution.py --git-history
 python -X utf8 -m unittest discover -s tests -v
 ```
 
 分发检查会拒绝非预期文件、媒体/草稿、具体 Windows 用户目录和模板残留实例数据。隔离测试使用两个临时配置和合成元数据，检查素材路径、字体资源、实例编号及注册时的旧条目保留，不接触实际必剪草稿库。它们不代替人工审查字幕正文、说明文档或原生导出结果。
 
 GitHub 仓库所有者、提交作者以及 MIT 版权声明属于公开项目归属信息，会正常保留。
+
+使用 Git checkout 发布时，额外运行 `--git-history` 检查可达提交历史的作者与提交者邮箱。公开提交使用当前维护者自己的 GitHub noreply 地址，并在仓库级 Git 配置中设置；不要使用发布者的私人邮箱或套用其他维护者的身份。网页和部分连接器会默认使用账号主邮箱，不能只检查文件内容而漏掉提交元数据。ZIP 下载没有 Git 历史，只运行文件检查即可。

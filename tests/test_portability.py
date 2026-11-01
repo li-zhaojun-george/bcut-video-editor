@@ -14,7 +14,7 @@ from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 import bcut_draft as bd
 import env_paths
-from check_distribution import check
+from check_distribution import check, check_history
 from register_draft import register
 
 
@@ -34,6 +34,15 @@ class PortabilityTests(unittest.TestCase):
     def test_public_package(self):
         _, errors = check()
         self.assertEqual(errors, [])
+
+    def test_private_commit_email_is_rejected_without_echoing_it(self):
+        from subprocess import CompletedProcess
+        private = 'person@example.com'
+        result = CompletedProcess([], 0, 'a' * 40 + '\x00' + private + '\x00' + private + '\n', '')
+        with patch('check_distribution.subprocess.run', return_value=result):
+            errors = check_history(self.base)
+        self.assertEqual(len(errors), 1)
+        self.assertNotIn(private, errors[0])
 
     def test_two_independent_profiles(self):
         all_ids = []

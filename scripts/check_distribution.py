@@ -1,7 +1,9 @@
 """Check the public package for local media, personal paths and template residue."""
+import argparse
 import json
 from pathlib import Path
 import re
+import subprocess
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -67,8 +69,27 @@ def check(root=ROOT):
     return files, errors
 
 
+def check_history(root=ROOT):
+    """Check reachable local Git history without echoing private addresses."""
+    result = subprocess.run(['git', 'log', '--all', '--format=%H%x00%ae%x00%ce'],
+                            cwd=root, capture_output=True, text=True, encoding='utf-8')
+    if result.returncode:
+        return ['Git history could not be read; use a repository checkout']
+    errors = []
+    for line in result.stdout.splitlines():
+        commit, author, committer = line.split('\x00')
+        if not author.endswith('@users.noreply.github.com') or not committer.endswith('@users.noreply.github.com'):
+            errors.append(f'{commit[:12]}: author/committer must use GitHub noreply before publishing')
+    return errors
+
+
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--git-history', action='store_true', help='Also check reachable commit author/committer addresses')
+    args = parser.parse_args()
     files, errors = check()
+    if args.git_history:
+        errors.extend(check_history())
     if errors:
         raise SystemExit('\n'.join(errors))
     print(f'PASS: {len(files)} distribution files; no local media or retained template instance data')

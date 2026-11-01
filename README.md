@@ -90,6 +90,7 @@ python -X utf8 scripts/register_draft.py --source prepared-drafts --guid '返回
 
 ```powershell
 python -X utf8 scripts/check_distribution.py
+python -X utf8 scripts/check_distribution.py --git-history
 python -X utf8 -m unittest discover -s tests -v
 ```
 
