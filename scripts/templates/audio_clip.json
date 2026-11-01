@@ -1,0 +1,52 @@
+{
+ "assetInfo": {
+  "assetItemType": 5,
+  "audioType": 1,
+  "content": "",
+  "coverPath": "",
+  "customInfos": {},
+  "displayName": "",
+  "duration": 0,
+  "fontID": 0,
+  "fontSrcPath": "",
+  "frameRateDen": 1,
+  "frameRateNum": 0,
+  "height": 0,
+  "itemName": "",
+  "originDuration": 0,
+  "originSrcPath": "",
+  "originType": 0,
+  "realMaterialId": "",
+  "shotClipId": "",
+  "shotIndex": -1,
+  "srcPath": "",
+  "type": 2,
+  "videoType": 0,
+  "width": 0
+ },
+ "deNoiseLevel": -1,
+ "fadeIn": 0,
+ "fadeOut": 0,
+ "fxs": [
+  {
+   "audioFxType": 0,
+   "bizType": 1,
+   "fxName": "Volume",
+   "gainValue": 0,
+   "idString": ""
+  }
+ ],
+ "idString": "",
+ "inPoint": 0,
+ "keepAudioPitch": true,
+ "materialId": "",
+ "originalFilePath": "",
+ "outPoint": 0,
+ "rowInTrack": 0,
+ "sourcePath": "",
+ "speed": 1,
+ "srcMissing": false,
+ "trimIn": 0,
+ "trimOut": 0,
+ "uid": ""
+}

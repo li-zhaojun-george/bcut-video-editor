@@ -1,0 +1,44 @@
+{
+  "name": "示例项目",
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "keep_original_audio": true,
+  "original_volume_db": 0,
+  "subtitle_size": 54,
+  "clips": [
+    {
+      "path": "C:/Media/a.mp4",
+      "trim_in": 500,
+      "trim_out": 4500
+    },
+    {
+      "path": "C:/Media/b.mp4",
+      "trim_in": 1000,
+      "trim_out": 5000
+    }
+  ],
+  "captions": [
+    {
+      "text": "示例字幕 1",
+      "start": 0,
+      "end": 3800,
+      "y": -0.65
+    },
+    {
+      "text": "示例字幕 2",
+      "start": 4200,
+      "end": 7800,
+      "y": -0.65
+    }
+  ],
+  "audio": [
+    {
+      "path": "C:/Media/bgm.wav",
+      "trim_out": 8000,
+      "volume_db": -12,
+      "fade_in": 300,
+      "fade_out": 500
+    }
+  ]
+}

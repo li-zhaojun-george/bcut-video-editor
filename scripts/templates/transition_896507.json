@@ -1,0 +1,39 @@
+{
+ "assetInfo": {
+  "assetItemType": 17,
+  "audioType": 0,
+  "content": "推拉晃动",
+  "coverPath": "",
+  "customInfos": {
+   "1004": 0
+  },
+  "displayName": "推拉晃动",
+  "duration": 2000,
+  "fontID": 0,
+  "fontSrcPath": "",
+  "frameRateDen": 1,
+  "frameRateNum": 0,
+  "height": 0,
+  "itemName": "推拉晃动",
+  "originDuration": 0,
+  "originSrcPath": "",
+  "originType": 0,
+  "realMaterialId": "896507",
+  "shotClipId": "",
+  "shotIndex": -1,
+  "srcPath": "",
+  "type": 10,
+  "videoType": 0,
+  "width": 0
+ },
+ "cover": "",
+ "idString": "",
+ "materialId": "896507",
+ "overlap": false,
+ "packagePath": "",
+ "srcIndex": 3,
+ "transitionDur": 2000,
+ "transitionName": "推拉晃动",
+ "transitionType": 1,
+ "uid": ""
+}
