@@ -1,5 +1,5 @@
 ---
-name: bcut-edit
+name: bilibili-video-editor
 description: 在 Windows 上根据本地素材和剪辑要求生成必剪可编辑草稿，支持顺序裁剪拼接、中文字幕和配乐，并在必剪中验证与导出。适用于必剪工程自动化；不用于 B 站投稿或云端字幕 API。
 metadata:
   short-description: 生成必剪草稿，验证字幕音轨并协助导出

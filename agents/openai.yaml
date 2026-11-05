@@ -1,4 +1,4 @@
 interface:
   display_name: "必剪剪辑"
   short_description: "将本地素材生成可编辑必剪草稿，校验中文字幕与音轨并协助导出成片"
-  default_prompt: "使用 $bcut-edit 根据我的素材和要求生成必剪草稿，验证字幕、音频并导出视频。"
+  default_prompt: "使用 $bilibili-video-editor 根据我的素材和要求生成必剪草稿，验证字幕、音频并导出视频。"

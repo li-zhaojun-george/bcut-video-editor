@@ -1,4 +1,4 @@
-"""bcut-edit 命令行入口。
+"""bilibili-video-editor 命令行入口。
 
     python bcut.py doctor                  环境体检（ffmpeg 能力 / 必剪目录 / 草稿）
     python bcut.py drafts                  列出必剪里的草稿

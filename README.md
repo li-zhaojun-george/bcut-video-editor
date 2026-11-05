@@ -4,7 +4,7 @@
 
 这是基于 [dsh-bcut-edit](https://github.com/LQH-A-A-O/dsh-bcut-edit) 的 Codex 适配版本，采用 MIT 许可证。已在 **Windows / 必剪 3.11.25.100** 上完成基础流程的原生导出验证；不是 Bilibili 官方插件。
 
-仓库名为 `bcut-video-editor`，Codex skill 名称为 **`bcut-edit`**。
+仓库名为 `bcut-video-editor`，Codex skill 名称为 **`bilibili-video-editor`**。
 
 ## 已验证的功能
 
@@ -30,16 +30,18 @@ $skillsRoot = if ($env:CODEX_HOME) {
 } else {
     Join-Path $env:USERPROFILE '.codex\skills'
 }
-$skillPath = Join-Path $skillsRoot 'bcut-edit'
+$skillPath = Join-Path $skillsRoot 'bilibili-video-editor'
 git clone https://github.com/li-zhaojun-george/bcut-video-editor.git $skillPath
 python -m pip install -r (Join-Path $skillPath 'requirements.txt')
 ```
 
 如果该目录已存在，请先保留已有版本；上述命令用于全新安装。让 Codex 重新加载技能后，可以直接说：
 
-> 使用 $bcut-edit，把这些素材剪成视频，添加中文字幕和配乐。
+> 使用 $bilibili-video-editor，把这些素材剪成视频，添加中文字幕和配乐。
 
 Skill 会读取 [SKILL.md](SKILL.md) 执行工作。首次使用按 [环境配置](references/local-environment.md) 检查工具路径。
+
+从 `bcut-edit` 升级时，先备份旧技能目录中的个人改动。若旧目录是此仓库的克隆，在旧目录更新 `main` 后，将安装目录改名为 `bilibili-video-editor`。如果旧目录是手动复制的，先将它移出技能目录，再按上面的步骤安装。需要撤回时可恢复备份。技能目录和必剪草稿库分别管理，卸载时只需移除技能目录。
 
 ## 命令行流程
 
